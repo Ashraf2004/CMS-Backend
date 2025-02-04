@@ -1,0 +1,467 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CMS_SL",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3001"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Access"
+    },
+    {
+      "name": "Users"
+    },
+    {
+      "name": "Claim"
+    },
+    {
+      "name": "Policy"
+    }
+  ],
+  "paths": {
+    "/api/register": {
+      "post": {
+        "tags": [
+          "Access"
+        ],
+        "summary": "user_register",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "firstName": "shaik",
+                  "lastName": "ashraf",
+                  "emailId": "ashraf@gmail.com",
+                  "password": "ashraf",
+                  "contactNo": 7997211555,
+                  "age": 21,
+                  "gender": "Male",
+                  "street": "vidyanagar",
+                  "city": "Singarayakonda",
+                  "pincode": "523101",
+                  "role": "user"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/login": {
+      "post": {
+        "tags": [
+          "Access"
+        ],
+        "summary": "user_login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "emailId": "rajaraju@gmail.com@gmail.com",
+                  "password": "roja",
+                  "role": "surveyor"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "Access"
+        ],
+        "summary": "home",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "AllUserInfo",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoiYXNocmFmQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM4MzAyODc2fQ.BHD1pvKxA-YltbZpHOWFs4D76NuCxQ7jt-gMELqnKLM"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/users/1a34c2ed-52fc-45bc-a7bf-012518e3eba5": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "UserInfo",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoiYXNocmFmQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM4MzAyODc2fQ.BHD1pvKxA-YltbZpHOWFs4D76NuCxQ7jt-gMELqnKLM"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "updateUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "firstName": "shaik",
+                  "lastName": "ashraf",
+                  "emailId": "ashraf@gmail.com",
+                  "password": "ashraf",
+                  "contactNo": 7997211555,
+                  "age": 21,
+                  "gender": "Male",
+                  "street": "vidyanagar 7th line",
+                  "city": "Singarayakonda",
+                  "pincode": "523101",
+                  "role": "user"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoiYXNocmFmQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM4MzAyODc2fQ.BHD1pvKxA-YltbZpHOWFs4D76NuCxQ7jt-gMELqnKLM"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "deleteUser",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoiYXNocmFmQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM4MzAyODc2fQ.BHD1pvKxA-YltbZpHOWFs4D76NuCxQ7jt-gMELqnKLM"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/claim": {
+      "get": {
+        "tags": [
+          "Claim"
+        ],
+        "summary": "AllClaims",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoiYXNocmFmQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM4MzAzNzA2fQ.RjA-K8GCDvKDnYi-oNEPc4MJb9qSdW5K6OFv0U_83G8"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/claim/f314a9e9-2b7b-453e-af49-fbba9053ae71": {
+      "put": {
+        "tags": [
+          "Claim"
+        ],
+        "summary": "claimUpdateBySurveyor",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "claimId": "f314a9e9-2b7b-453e-af49-fbba9053ae71",
+                  "policyName": "Demo Policy",
+                  "claimAmount": 50000,
+                  "claimDate": "29/01/2025",
+                  "eventDate": "20/01/2025",
+                  "amountApproved": 30000,
+                  "claimStatus": "Open",
+                  "actionStatus": "survey completed",
+                  "customerResponse": "pending",
+                  "customerName": "ashraf"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoicmFqYXJhanVAZ21haWwuY29tIiwicm9sZSI6InN1cnZleW9yIiwiaWF0IjoxNzM4MzA1NDY3fQ.uIN-zoCotoM9u_sUkjHvErtL8_9D54nCnReL35tA0c8"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/policy": {
+      "get": {
+        "tags": [
+          "Policy"
+        ],
+        "summary": "AllPolicies",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoiYXNocmFmQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM4MzAzNzA2fQ.RjA-K8GCDvKDnYi-oNEPc4MJb9qSdW5K6OFv0U_83G8"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Policy"
+        ],
+        "summary": "AddPolicy",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "Demo Policy 2",
+                  "description": "Demo Description",
+                  "policyPlan": "monthly",
+                  "premiumAmount": 500,
+                  "coverageType": "Health Insurance",
+                  "coverageAmount": 300000
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoiYXNocmFmQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM4MzAzNzA2fQ.RjA-K8GCDvKDnYi-oNEPc4MJb9qSdW5K6OFv0U_83G8"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/policy/9a1298db-eb6a-4e25-8b4e-67bf39756a80": {
+      "get": {
+        "tags": [
+          "Policy"
+        ],
+        "summary": "userPolicy",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoiYXNocmFmQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM4MzAzNzA2fQ.RjA-K8GCDvKDnYi-oNEPc4MJb9qSdW5K6OFv0U_83G8"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/policy/8d4820b2-87b0-4483-88ad-e703d1c07d23": {
+      "put": {
+        "tags": [
+          "Policy"
+        ],
+        "summary": "UpdatePolicy",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "Demo Policy 2",
+                  "description": "Demo Description",
+                  "policyPlan": "monthly",
+                  "premiumAmount": 5000,
+                  "coverageType": "Health Insurance",
+                  "coverageAmount": 300000
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoiYXNocmFmQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM4MzAzNzA2fQ.RjA-K8GCDvKDnYi-oNEPc4MJb9qSdW5K6OFv0U_83G8"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Policy"
+        ],
+        "summary": "New Request",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoiYXNocmFmQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM4MzAzNzA2fQ.RjA-K8GCDvKDnYi-oNEPc4MJb9qSdW5K6OFv0U_83G8"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}
