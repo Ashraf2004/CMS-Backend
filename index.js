@@ -7,12 +7,14 @@ const client = require("prom-client")
 const responseTime  = require("response-time")
 
 app.use(express.json());
-app.use(cors({
-  origin: "*",  // Allows requests from any origin
-  methods: "*", // Allows all HTTP methods (GET, POST, PUT, DELETE, etc.)
-  allowedHeaders: "*", // Allows all headers
-  credentials: true, // Optional: Enable cookies with cross-origin requests (if needed)
-}));
+// app.use(cors({
+//   origin: "*",  // Allows requests from any origin
+//   methods: "*", // Allows all HTTP methods (GET, POST, PUT, DELETE, etc.)
+//   allowedHeaders: "*", // Allows all headers
+//   credentials: true, // Optional: Enable cookies with cross-origin requests (if needed)
+// }));
+
+app.use(cors());
 
 // Connection
 const connectToDB = require("./config/connection");
